@@ -46,9 +46,30 @@
         str.slice(0,1).toUpperCase() + str.slice(1).toLowerCase();
       const lastLetter = (str) => str.slice(-1);
       
+      const fizzBuzz = () => {
+        let num = parseInt(prompt('Pick a positive integer'));
+        if (num < 1 || !Number.isInteger(num)) {
+          alert('That wasn\'t a positive integer');
+          return false;
+        }
+        for (let i=0; i < num; i++) {
+          let counter = i + 1;
+          if (counter % 3 === 0 && counter % 5 === 0) {
+            console.log('FizzBuzz');
+          } else if (counter % 3 === 0) {
+            console.log('Fizz');
+          } else if (counter % 5 === 0) {
+            console.log('Buzz');
+          } else {
+            console.log(counter);
+          }
+        }
+      }
+      
     </script>
     <button onclick="jsName()">The name of JavaScript</button>
     <br><button onclick="showTheSign()">Show the sign</button>
     <br><button onclick="rewriteIfElse()">Rewrite if..else</button>
+    <br><button onclick="fizzBuzz()">FizzBuzz</button>
   </body>
 </html>
