@@ -5,6 +5,13 @@
     <title>JS Practice</title>
   </head>
   <body>
+    <button onclick="jsName()">The name of JavaScript</button>
+    <br><button onclick="showTheSign()">Show the sign</button>
+    <br><button onclick="rewriteIfElse()">Rewrite if..else</button>
+    <br><button onclick="fizzBuzz()">FizzBuzz</button>
+    <br><button onclick="addDOMElements()">Add DOM Elements</button>
+    <br><button id="btn6">Practicing events</button>
+    
     <script>
       console.log("Hello world!");
       
@@ -39,13 +46,6 @@
         
       }
       
-      //just call these from the console
-      const add7 = num => num+7;
-      const multiply = (num1, num2) => num1 * num2;
-      const capitalize = (str) =>
-        str.slice(0,1).toUpperCase() + str.slice(1).toLowerCase();
-      const lastLetter = (str) => str.slice(-1);
-      
       const fizzBuzz = () => {
         let num = parseInt(prompt('Pick a positive integer'));
         if (num < 1 || !Number.isInteger(num)) {
@@ -66,10 +66,49 @@
         }
       }
       
+      //just call these from the console
+      const add7 = num => num+7;
+      const multiply = (num1, num2) => num1 * num2;
+      const capitalize = (str) =>
+        str.slice(0,1).toUpperCase() + str.slice(1).toLowerCase();
+      const lastLetter = (str) => str.slice(-1);
+      
+      //DOM Manipulation stuff
+      const addDOMElements = () => {
+        let container = document.createElement('div');
+        
+        let para = document.createElement('p');
+        para.style.color = 'red';
+        para.textContent = 'Hey, I\'m red!';
+        container.appendChild(para);
+        
+        let heading = document.createElement('h3');
+        heading.style.color = 'blue';
+        heading.textContent = 'I\'m a blue H3!';
+        container.appendChild(heading);
+        
+        let div = document.createElement('div');
+        div.style.cssText = 'border: 1px solid black; background-color: pink;';
+        
+        let h1 = document.createElement('h1');
+        h1.textContent = 'I\'m in a div!';
+        div.appendChild(h1);
+        
+        let para2 = document.createElement('p');
+        para2.textContent = 'ME TOO!';
+        div.appendChild(para2);
+        
+        container.appendChild(div);
+        
+        document.body.appendChild(container);
+      }
+      
+      const btn6 = document.querySelector('#btn6');
+      
+      btn6.addEventListener('click', function (e) {
+        console.log(e.target);
+      });
+    
     </script>
-    <button onclick="jsName()">The name of JavaScript</button>
-    <br><button onclick="showTheSign()">Show the sign</button>
-    <br><button onclick="rewriteIfElse()">Rewrite if..else</button>
-    <br><button onclick="fizzBuzz()">FizzBuzz</button>
   </body>
 </html>
