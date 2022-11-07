@@ -1,1 +1,1 @@
-# odin-js-practice
+# odin-practice
